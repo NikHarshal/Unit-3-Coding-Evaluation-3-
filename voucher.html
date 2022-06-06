@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      #navbar{
+        height: 40px;
+        background-color: rgb(247, 216, 221);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h4>Buy Voucher</h4>
+      <h4 id="wallet_balance"> </h4>
+      <a href="voucher.html">My_Voucher</a>
+    <!-- Wallet balence id:- "wallet_balance" (only number). -->
+    <!-- - The voucher card will have class :- "voucher".
+  - All the vouchers will be appended inside div with id "voucher_list".
+  - Buy button will have class:- "buy_voucher"
+  - All the purchased voucher will be stored with key :- "purchase". -->
+  </body>
+</html>
+<script>
+   var data= JSON.parse(localStorage.getItem("user"))
+  var amount =document.getElementById("wallet_balance")
+  amount.innerText=data.wallet
+console.log(data.wallet);
+var url=" https://masai-vouchers-api.herokuapp.com/api/vouchers"
+      
+</script>

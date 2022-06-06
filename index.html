@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      #navbar{
+        height: 40px;
+        background-color: rgb(247, 216, 221);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #box{
+          background-color: rgb(253, 219, 224);
+          width: 25%;
+          height: 300px;
+            margin: auto;
+            
+      }
+      input{
+        width: 80%;
+        margin-top: 10px;
+        margin-left: 20px;
+        height: 20px;
+        
+      }
+      h3{
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Sign Up</h3>
+      <a href="voucher.html">Purchase Voucher</a>
+    </div>
+    <div id="box">
+      <h2>Sign Up</h2>
+      <form action="" onsubmit="submitdata()">
+        <input type="text" placeholder="name" id="name"> <br>
+        <input type="text" placeholder="email" id="email"><br>
+        <input type="text" placeholder="address" id="address"><br>
+        <input type="number" placeholder="amount" id="amount"><br>
+        <input type="submit" id="submit" >
+      </form>
+    </div>
+    <!-- - name input box :- "name"
+  - email input box :- "email"
+  - Address input box :- "address"
+  - Amount input box :- "amount" 
+  - Submit button :- "submit"
+  - The user will be stored with key:- "user"
+  - The input fields should become empty after submitting -->
+  </body>
+</html>
+<script>
+  var data=[]
+  function submitdata(){
+    event.preventDefault()
+   var userData = {
+     name:document.getElementById("name").value,
+     email:document.getElementById("email").value ,
+     address:document.getElementById("address").value,
+     wallet:document.getElementById("amount").value
+   }
+   data.push(userData)
+   console.log(data);
+   localStorage.setItem("user",JSON.stringify(userData))
+  
+  }
+ 
+</script>
